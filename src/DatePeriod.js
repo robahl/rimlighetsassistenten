@@ -5,24 +5,27 @@ import 'react-datepicker/dist/react-datepicker.css';
 import moment from 'moment';
 import 'moment/locale/sv';
 
-class Calculator extends Component {
+class DatePeriod extends Component {
   constructor() {
     super();
+
+    this.fromDateChange = this.fromDateChange.bind(this);
+    this.toDateChange = this.toDateChange.bind(this);
+
     this.state = {
       fromDate: null,
       toDate: null
     }
-
-    this.fromDateChange = this.fromDateChange.bind(this);
-    this.toDateChange = this.toDateChange.bind(this);
   }
 
   fromDateChange(date) {
     this.setState({fromDate: date});
+    this.props.onChange(this.daysInBetween);
   }
 
   toDateChange(date) {
     this.setState({toDate: date});
+    this.props.onChange(this.daysInBetween);
   }
 
   get daysInBetween() {
@@ -61,4 +64,4 @@ class Calculator extends Component {
   }
 }
 
-export default Calculator;
+export default DatePeriod;
