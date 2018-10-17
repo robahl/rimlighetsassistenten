@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
 import './App.scss';
-import Calculator from './Calculator';
+import DatePeriod from './DatePeriod';
 import Result from './Result';
 
 class App extends Component {
   constructor() {
     super();
 
-    this.state = {result: "No result"};
+    this.handleDateChange = this.handleDateChange.bind(this);
 
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      result: "No result",
+      daysInBetween: 0
+    };
   }
 
-  handleChange(e) {
-
+  handleDateChange(daysInBetween) {
+    this.setState({daysInBetween});
   }
 
   render() {
     return (
-      <div className="App">
-        <header>
-          <h1>Rimligheten</h1>
+      <div className="App container">
+        <header className="row">
+          <h1 className="col">Rimligheten</h1>
         </header>
 
-        <Calculator onChange={this.handleChange} />
-        <Result value={this.state.result} />
+        <DatePeriod onChange={this.handleDateChange} />
+        <Result value="Resultat: {this.state.daysInBetween}" />
       </div>
     );
   }
