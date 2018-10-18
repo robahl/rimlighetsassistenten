@@ -60,6 +60,7 @@ class DatePeriod extends Component {
             placeholderText="Till"
             dateFormat="YYMMDD"
             maxDate={moment()}
+            minDate={this.state.fromDate}
             locale="sv-se"
           />
         </div>
