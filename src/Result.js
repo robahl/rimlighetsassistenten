@@ -1,9 +1,7 @@
 import React from 'react';
 
 function Result(props) {
-  return (
-    <p>This is {props.result}</p>
-  );
+  return <p>Resultat: {props.value}</p>;
 }
 
 export default Result;

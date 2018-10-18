@@ -10,13 +10,13 @@ class App extends Component {
     this.handleDateChange = this.handleDateChange.bind(this);
 
     this.state = {
-      result: "No result",
+      result: 'No result',
       daysInBetween: 0
     };
   }
 
   handleDateChange(daysInBetween) {
-    this.setState({daysInBetween});
+    this.setState({ daysInBetween });
   }
 
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
         </header>
 
         <DatePeriod onChange={this.handleDateChange} />
-        <Result value="Resultat: {this.state.daysInBetween}" />
+        <Result value={this.state.daysInBetween} />
       </div>
     );
   }

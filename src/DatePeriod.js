@@ -15,16 +15,16 @@ class DatePeriod extends Component {
     this.state = {
       fromDate: null,
       toDate: null
-    }
+    };
   }
 
   fromDateChange(date) {
-    this.setState({fromDate: date});
+    this.setState({ fromDate: date });
     this.props.onChange(this.daysInBetween);
   }
 
   toDateChange(date) {
-    this.setState({toDate: date});
+    this.setState({ toDate: date });
     this.props.onChange(this.daysInBetween);
   }
 
@@ -47,7 +47,8 @@ class DatePeriod extends Component {
             placeholderText="Från"
             dateFormat="YYMMDD"
             maxDate={moment()}
-            locale="sv-se" />
+            locale="sv-se"
+          />
         </div>
         <div className="col-4">
           <span>Till och med</span>
@@ -57,7 +58,8 @@ class DatePeriod extends Component {
             placeholderText="Till"
             dateFormat="YYMMDD"
             maxDate={moment()}
-            locale="sv-se" />
+            locale="sv-se"
+          />
         </div>
       </div>
     );
