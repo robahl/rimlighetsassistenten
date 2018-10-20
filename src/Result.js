@@ -1,7 +1,17 @@
 import React from 'react';
 
 function Result(props) {
-  return <p>Resultat: {props.value}</p>;
+  let message = '';
+
+  if (props.rimligLon) {
+    message = 'Lönen är rimlig';
+  } else if (props.rimligLon === null) {
+    message = 'Fyll i alla fält';
+  } else {
+    message = 'Lönen är helt orimlig';
+  }
+
+  return <p>{message}</p>;
 }
 
 export default Result;
