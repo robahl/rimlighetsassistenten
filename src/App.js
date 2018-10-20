@@ -50,6 +50,9 @@ class App extends Component {
     return (
       <div className="App container">
         <header className="row">
+          <div className="col">
+            <img src="/images/logo.svg" alt="logo" />
+          </div>
           <h1 className="col">Rimligheten</h1>
         </header>
 
