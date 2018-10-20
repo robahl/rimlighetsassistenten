@@ -20,13 +20,13 @@ class DatePeriod extends Component {
 
   fromDateChange(date) {
     this.setState({ fromDate: date }, () =>
-      this.props.onChange(this.daysInBetween)
+      this.props.onChange(this.daysInBetween / date.daysInMonth())
     );
   }
 
   toDateChange(date) {
     this.setState({ toDate: date }, () =>
-      this.props.onChange(this.daysInBetween)
+      this.props.onChange(this.daysInBetween / date.daysInMonth())
     );
   }
 
