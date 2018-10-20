@@ -9,15 +9,41 @@ class App extends Component {
     super();
 
     this.handleDateChange = this.handleDateChange.bind(this);
+    this.handleUpdatePrognosLon = this.handleUpdatePrognosLon.bind(this);
+    this.handleUpdateRedovisadLon = this.handleUpdateRedovisadLon.bind(this);
 
     this.state = {
-      result: 'No result',
-      daysInBetween: 0
+      dayFactor: null,
+      prognosLon: null,
+      redovisadLon: null
     };
   }
 
-  handleDateChange(daysInBetween) {
-    this.setState({ daysInBetween });
+  handleDateChange(dayFactor) {
+    this.setState({ dayFactor });
+  }
+
+  handleUpdatePrognosLon(lon) {
+    this.setState({ prognosLon: lon });
+  }
+
+  handleUpdateRedovisadLon(lon) {
+    this.setState({ redovisadLon: lon });
+  }
+
+  get rimligLon() {
+    if (
+      !this.state.dayFactor ||
+      !this.state.prognosLon ||
+      !this.state.redovisadLon
+    ) {
+      return null;
+    }
+
+    const rimligLon = this.state.dayFactor * this.state.prognosLon;
+    const lonMedAvvikelse = rimligLon * Lon.DEVIATION;
+
+    return this.state.redovisadLon < lonMedAvvikelse;
   }
 
   render() {
@@ -28,8 +54,11 @@ class App extends Component {
         </header>
 
         <DatePeriod onChange={this.handleDateChange} />
-        <Lon />
-        <Result value={this.state.daysInBetween} />
+        <Lon
+          onUpdatePrognosLon={this.handleUpdatePrognosLon}
+          onUpdateRedovisadLon={this.handleUpdateRedovisadLon}
+        />
+        <Result rimligLon={this.rimligLon} />
       </div>
     );
   }
