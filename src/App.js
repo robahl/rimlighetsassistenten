@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import DatePeriod from './DatePeriod';
+import Lon from './Lon';
 import Result from './Result';
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
         </header>
 
         <DatePeriod onChange={this.handleDateChange} />
+        <Lon />
         <Result value={this.state.daysInBetween} />
       </div>
     );
