@@ -9,14 +9,36 @@ class Lon extends Component {
     this.handleRedovisadChange = this.handleRedovisadChange.bind(this);
 
     this.state = {
-      prognosLon: null,
-      redovisadLon: null
+      prognosLon: '',
+      redovisadLon: ''
     };
   }
 
-  handlePrognosChange(e) {}
+  handlePrognosChange(e) {
+    let number = Number(e.target.value.replace(/\D/g, ''));
 
-  handleRedovisadChange(e) {}
+    // callback here with number
+
+    number = number.toLocaleString('sv-SE');
+
+    if (number === '0') {
+      number = '';
+    }
+    this.setState({ prognosLon: number });
+  }
+
+  handleRedovisadChange(e) {
+    let number = Number(e.target.value.replace(/\D/g, ''));
+
+    // callback here with number
+
+    number = number.toLocaleString('sv-SE');
+
+    if (number === '0') {
+      number = '';
+    }
+    this.setState({ redovisadLon: number });
+  }
 
   render() {
     return (
@@ -24,7 +46,7 @@ class Lon extends Component {
         <div className="col-4 offset-2">
           <span>Prognosbelopp</span>
           <input
-            type="number"
+            type="text"
             value={this.state.prognosLon}
             onChange={this.handlePrognosChange}
           />
@@ -32,7 +54,7 @@ class Lon extends Component {
         <div className="col-4">
           <span>Redovisad lön</span>
           <input
-            type="number"
+            type="text"
             value={this.state.redovisadLon}
             onChange={this.handleRedovisadChange}
           />
