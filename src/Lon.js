@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Lon.scss';
 
 class Lon extends Component {
+  static DEVIATION = 1.2;
   constructor() {
     super();
 
@@ -17,7 +18,7 @@ class Lon extends Component {
   handlePrognosChange(e) {
     let number = Number(e.target.value.replace(/\D/g, ''));
 
-    // callback here with number
+    this.props.onUpdatePrognosLon(number);
 
     number = number.toLocaleString('sv-SE');
 
@@ -30,7 +31,7 @@ class Lon extends Component {
   handleRedovisadChange(e) {
     let number = Number(e.target.value.replace(/\D/g, ''));
 
-    // callback here with number
+    this.props.onUpdateRedovisadLon(number);
 
     number = number.toLocaleString('sv-SE');
 
