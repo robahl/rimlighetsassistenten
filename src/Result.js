@@ -19,7 +19,7 @@ function Result(props) {
   return (
     <div className="Result row">
       <div className="col">
-        <h2 className={'alert ' + alertClass}>{message}</h2>
+        <h4 className={'alert ' + alertClass}>{message}</h4>
       </div>
     </div>
   );
