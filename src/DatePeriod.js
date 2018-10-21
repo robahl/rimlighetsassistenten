@@ -41,7 +41,7 @@ class DatePeriod extends Component {
   render() {
     return (
       <div className="DatePeriod row">
-        <div className="col input-group mb-3">
+        <div className="col input-group mb-3 datepicker">
           <DatePicker
             className="form-control"
             selected={this.state.fromDate}
@@ -52,7 +52,7 @@ class DatePeriod extends Component {
             locale="sv-se"
           />
         </div>
-        <div className="col input-group mb-3">
+        <div className="col input-group mb-3 datepicker">
           <DatePicker
             className="form-control"
             selected={this.state.toDate}

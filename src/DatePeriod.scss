@@ -1,7 +1,10 @@
 .DatePeriod {
-  .react-datepicker-wrapper {
-    input {
-      text-align: center;
-    }
+  .datepicker > div,
+  .datepicker .react-datepicker-wrapper,
+  .react-datepicker__input-container {
+    width: 100%;
+  }
+  input {
+    text-align: center;
   }
 }
