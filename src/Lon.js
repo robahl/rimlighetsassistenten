@@ -44,21 +44,29 @@ class Lon extends Component {
   render() {
     return (
       <div className="Lon row">
-        <div className="col-4 offset-2">
-          <span>Prognosbelopp</span>
+        <div className="col input-group mb-3">
           <input
+            className="form-control"
+            placeholder="Prognoslön hel månad"
             type="text"
             value={this.state.prognosLon}
             onChange={this.handlePrognosChange}
           />
+          <div className="input-group-append">
+            <span className="input-group-text">kr</span>
+          </div>
         </div>
-        <div className="col-4">
-          <span>Redovisad lön</span>
+        <div className="col input-group mb-3">
           <input
+            className="form-control"
+            placeholder="Redovisad lön"
             type="text"
             value={this.state.redovisadLon}
             onChange={this.handleRedovisadChange}
           />
+          <div className="input-group-append">
+            <span className="input-group-text">kr</span>
+          </div>
         </div>
       </div>
     );
