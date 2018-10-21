@@ -46,15 +46,31 @@ class App extends Component {
     return this.state.redovisadLon < lonMedAvvikelse;
   }
 
+  clearAllFields() {
+    document.querySelectorAll('input').forEach(elem => (elem.value = null));
+  }
+
   render() {
     return (
       <div className="App container">
         <header className="row">
           <div className="col">
-            <img src="/images/logo.svg" alt="logo" />
+            <div className="row">
+              <div className="col">
+                <img src="/images/logo.svg" alt="logo" />
+              </div>
+            </div>
+            <div className="row">
+              <h1 className="col">Rimligheten</h1>
+            </div>
           </div>
-          <h1 className="col">Rimligheten</h1>
         </header>
+
+        <button
+          className="btn btn-secondary btn-sm float-right clear-button"
+          onClick={this.clearAllFields}>
+          Nollställ
+        </button>
 
         <DatePeriod onChange={this.handleDateChange} />
         <Lon

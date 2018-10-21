@@ -7,6 +7,7 @@ body {
 }
 
 .App {
+  position: relative;
   text-align: center;
   background: white;
   padding: 1em;
@@ -21,5 +22,11 @@ body {
     right: 3px;
     bottom: 3px;
     color: rgb(167, 167, 167);
+  }
+
+  .clear-button {
+    position: absolute;
+    right: 1em;
+    top: 1.4em;
   }
 }
