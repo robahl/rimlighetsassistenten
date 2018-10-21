@@ -1,8 +1,25 @@
+$af-primary-color: #00005a;
+
 body {
   font: 16px 'Open Sans';
   margin-top: 1em;
+  background: #f8f8f8;
 }
 
 .App {
   text-align: center;
+  background: white;
+  padding: 1em;
+  box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.15);
+
+  h1 {
+    color: $af-primary-color;
+  }
+
+  .author {
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    color: rgb(167, 167, 167);
+  }
 }

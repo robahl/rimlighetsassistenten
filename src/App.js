@@ -62,6 +62,7 @@ class App extends Component {
           onUpdateRedovisadLon={this.handleUpdateRedovisadLon}
         />
         <Result rimligLon={this.rimligLon} />
+        <small className="author">RobAhl - 2018</small>
       </div>
     );
   }
