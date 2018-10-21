@@ -61,7 +61,7 @@ class App extends Component {
               </div>
             </div>
             <div className="row">
-              <h1 className="col">Rimligheten</h1>
+              <h1 className="col">Rimlighetsassistenten</h1>
             </div>
           </div>
         </header>
