@@ -41,9 +41,9 @@ class DatePeriod extends Component {
   render() {
     return (
       <div className="DatePeriod row">
-        <div className="col-4 offset-2">
-          <span>Från och med</span>
+        <div className="col input-group mb-3">
           <DatePicker
+            className="form-control"
             selected={this.state.fromDate}
             onChange={this.fromDateChange}
             placeholderText="Från"
@@ -52,9 +52,9 @@ class DatePeriod extends Component {
             locale="sv-se"
           />
         </div>
-        <div className="col-4">
-          <span>Till och med</span>
+        <div className="col input-group mb-3">
           <DatePicker
+            className="form-control"
             selected={this.state.toDate}
             onChange={this.toDateChange}
             placeholderText="Till"
