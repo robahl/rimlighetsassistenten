@@ -6,13 +6,13 @@ function Result(props) {
   let alertClass = 'alert-primary';
 
   if (props.rimligLon) {
-    message = 'Lönen är rimlig';
+    message = 'Redovisad lön är rimlig';
     alertClass = 'alert-success';
   } else if (props.rimligLon === null) {
-    message = 'Fyll i alla fält';
+    message = 'Fyll i period och lön';
     alertClass = 'alert-primary';
   } else {
-    message = 'Lönen är helt orimlig';
+    message = 'Redovisad lön är inte rimlig';
     alertClass = 'alert-danger';
   }
 
