@@ -59,7 +59,11 @@ class DatePeriod extends Component {
             onChange={this.toDateChange}
             placeholderText="Till"
             dateFormat="YYMMDD"
-            maxDate={moment()}
+            maxDate={
+              (this.state.fromDate &&
+                moment(this.state.fromDate).endOf('month')) ||
+              moment()
+            }
             minDate={this.state.fromDate}
             locale="sv-se"
           />
