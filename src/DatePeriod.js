@@ -19,15 +19,19 @@ class DatePeriod extends Component {
   }
 
   fromDateChange(date) {
-    this.setState({ fromDate: date }, () =>
-      this.props.onChange(this.daysInBetween / date.daysInMonth())
-    );
+    this.setState({ fromDate: date }, () => {
+      if (date) {
+        this.props.onChange(this.daysInBetween / date.daysInMonth());
+      }
+    });
   }
 
   toDateChange(date) {
-    this.setState({ toDate: date }, () =>
-      this.props.onChange(this.daysInBetween / date.daysInMonth())
-    );
+    this.setState({ toDate: date }, () => {
+      if (date) {
+        this.props.onChange(this.daysInBetween / date.daysInMonth());
+      }
+    });
   }
 
   get daysInBetween() {
