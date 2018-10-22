@@ -11,6 +11,10 @@ class App extends Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleUpdatePrognosLon = this.handleUpdatePrognosLon.bind(this);
     this.handleUpdateRedovisadLon = this.handleUpdateRedovisadLon.bind(this);
+    this.clearAllFields = this.clearAllFields.bind(this);
+
+    this.datePeriodRef = React.createRef();
+    this.lonRef = React.createRef();
 
     this.state = {
       dayFactor: null,
@@ -47,7 +51,8 @@ class App extends Component {
   }
 
   clearAllFields() {
-    document.querySelectorAll('input').forEach(elem => (elem.value = null));
+    this.datePeriodRef.current.clearFields();
+    this.lonRef.current.clearFields();
   }
 
   render() {
@@ -67,10 +72,11 @@ class App extends Component {
           Nollställ
         </button>
 
-        <DatePeriod onChange={this.handleDateChange} />
+        <DatePeriod onChange={this.handleDateChange} ref={this.datePeriodRef} />
         <Lon
           onUpdatePrognosLon={this.handleUpdatePrognosLon}
           onUpdateRedovisadLon={this.handleUpdateRedovisadLon}
+          ref={this.lonRef}
         />
         <Result rimligLon={this.rimligLon} />
         <small className="author">RobAhl - 2018</small>

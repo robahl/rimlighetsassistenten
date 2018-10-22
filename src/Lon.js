@@ -41,6 +41,13 @@ class Lon extends Component {
     this.setState({ redovisadLon: number });
   }
 
+  clearFields() {
+    this.setState({
+      prognosLon: '',
+      redovisadLon: ''
+    });
+  }
+
   render() {
     return (
       <div className="Lon row">

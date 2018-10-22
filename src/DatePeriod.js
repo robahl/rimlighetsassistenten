@@ -42,6 +42,13 @@ class DatePeriod extends Component {
     }
   }
 
+  clearFields() {
+    this.setState({
+      fromDate: null,
+      toDate: null
+    });
+  }
+
   render() {
     return (
       <div className="DatePeriod row">
