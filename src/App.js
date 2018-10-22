@@ -53,13 +53,8 @@ class App extends Component {
   render() {
     return (
       <div className="App container">
-        <header className="row">
+        <header className="row mt-4">
           <div className="col">
-            <div className="row">
-              <div className="col">
-                <img src="/images/logo.svg" alt="logo" />
-              </div>
-            </div>
             <div className="row">
               <h1 className="col">Rimlighetsassistenten</h1>
             </div>
