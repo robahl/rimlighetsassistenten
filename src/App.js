@@ -16,11 +16,13 @@ class App extends Component {
     this.datePeriodRef = React.createRef();
     this.lonRef = React.createRef();
 
-    this.state = {
+    this.initialState = {
       dayFactor: null,
       prognosLon: null,
       redovisadLon: null
     };
+
+    this.state = this.initialState;
   }
 
   handleDateChange(dayFactor) {
@@ -51,6 +53,7 @@ class App extends Component {
   }
 
   clearAllFields() {
+    this.setState(this.initialState);
     this.datePeriodRef.current.clearFields();
     this.lonRef.current.clearFields();
   }
